@@ -88,6 +88,10 @@ Redirect a background child while it runs — add a constraint, correct course, 
 | `scout` | read-only | Exploration — paths and excerpts, breadth over depth |
 | `worker` | full | Scoped implementation, verified before it reports |
 
+A child's final message is injected whole into your context, so each builtin reports in a compressed, fixed shape (caveman's cavecrew contract): `scout` answers as a `path:line — symbol — note` list (or `No match.`), `reviewer` leads with the verdict then findings, `worker` states what changed, what it verified, what it left undone — all with a floor that keeps every path, line, command, number and error string verbatim and any security note in plain prose. A terse child is a cheaper child, not a vaguer one.
+
+A child's final message is injected whole into your context, so each builtin reports in a compressed, fixed shape (caveman's cavecrew contract): `scout` answers as a `path:line — symbol — note` list (or `No match.`), `reviewer` leads with the verdict then findings, `worker` states what changed, what it verified, what it left undone — all with a floor that keeps every path, line, command, number and error string verbatim and any security note in plain prose. A terse child is a cheaper child, not a vaguer one.
+
 ## Custom agent types
 
 Drop `.pi/agents/<name>.md` (project) or `<agentDir>/agents/<name>.md` (global):
