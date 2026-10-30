@@ -36,13 +36,14 @@ export const ASK_TOOL_DESCRIPTION = [
 ].join(" ");
 
 /** How the question is shown, and what the child gets back. */
-export function askTitle(agent: string, reason: AskReason): string {
+export function askTitle(agent: string, reason: AskReason, question: string, context?: string): string {
   const label: Record<AskReason, string> = {
     need_decision: "needs a decision",
     clarify_scope: "needs the scope clarified",
     missing_access: "is missing access",
   };
-  return `Subagent ${agent} ${label[reason]}`;
+  // ui.input's placeholder is not a message; keep the question in its visible title.
+  return `Subagent ${agent} ${label[reason]}\n\n${askBody(question, context)}`;
 }
 
 export function askBody(question: string, context: string | undefined): string {
